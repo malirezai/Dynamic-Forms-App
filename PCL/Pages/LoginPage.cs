@@ -74,11 +74,17 @@ namespace PCL
 									AuthToken = _token,
 									authExpiry = _expiry
 								};
+
 							}
+						}
+						else {
+							return;
 						}
 					}
 
 					await Navigation.PushModalAsync(new MainPage());
+					
+
 				}
 				else {
 					App.USING_AUTH = false;

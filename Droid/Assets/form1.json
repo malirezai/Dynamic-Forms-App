@@ -21,6 +21,7 @@
     {"$type":"PCL.Picker, PCL",
    	  "Type":"Picker",
       "DefaultIndex":0,
+  	  "AutomationID":"Picker1",
       "Values":["1","2","3","4","5"],
       "LabelText":"Years of Experiencce",
       "Visibile":true},
@@ -33,6 +34,7 @@
       "Visibile":true},
     {"$type":"PCL.DatePicker, PCL",
  	  "Type":"DatePicker",
+ 	  "AutomationID":"Picker1",
       "SelectedDate":"0001-01-01T00:00:00",
       "LabelText":"Date of Birth:",
       "Visibile":true}

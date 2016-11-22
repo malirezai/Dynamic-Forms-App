@@ -41,6 +41,7 @@ namespace PCL
 				{
 					var imageCell = new ImageCell();
 					imageCell.SetBinding(TextCell.TextProperty, "Title");
+				
 					//imageCell.set(ImageCell.ImageSourceProperty, "IconSource");
 					return imageCell;
 				}),

@@ -8,6 +8,7 @@ namespace PCL
 		public int DefaultIndex;
 		public string SelectedValue;
 		public List<string> Values;
+		public string AutomationID;
 
 		public Picker()
 		{

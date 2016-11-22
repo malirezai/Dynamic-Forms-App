@@ -98,7 +98,8 @@ namespace PCL
 						{
 							Placeholder = ((FormEntryField)el).PlaceHolderText,
 							HorizontalOptions = LayoutOptions.FillAndExpand,
-							Keyboard = el.NumKeyboard ? Keyboard.Telephone : Keyboard.Default
+							Keyboard = el.NumKeyboard ? Keyboard.Telephone : Keyboard.Default,
+							AutomationId = ((FormEntryField)el).PlaceHolderText
 						};
 
 						_entry.TextChanged += (sender, e) =>
@@ -121,7 +122,8 @@ namespace PCL
 						var editor = new EditorGrows//Editor
 						{
 							//Text = ((FormTextField)el).LabelText,
-							HorizontalOptions = LayoutOptions.FillAndExpand
+							HorizontalOptions = LayoutOptions.FillAndExpand,
+							AutomationId = ((FormTextField)el).PlaceHolderText
 						};
 
 						editor.TextChanged += (sender, e) =>
@@ -140,7 +142,10 @@ namespace PCL
 							HorizontalOptions = LayoutOptions.FillAndExpand
 						});
 
-						var _picker = new Xamarin.Forms.Picker();
+						var _picker = new Xamarin.Forms.Picker
+						{
+							AutomationId = ((Picker)el).AutomationID
+						};
 						_picker.HorizontalOptions = LayoutOptions.FillAndExpand;
 
 						foreach (var option in ((Picker)el).Values)
@@ -193,7 +198,8 @@ namespace PCL
 
 						var datePicker = new Xamarin.Forms.DatePicker
 						{
-							HorizontalOptions = LayoutOptions.FillAndExpand
+							HorizontalOptions = LayoutOptions.FillAndExpand,
+							AutomationId = ((DatePicker)el).AutomationID
 						};
 
 						datePicker.DateSelected += (sender, e) => {
