@@ -32,6 +32,8 @@ namespace PCL.Droid
 		protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
 		{
 			base.OnActivityResult(requestCode, resultCode, data);
+			// this sets the authentication response on Android from the webview 
+			//or broker in order to continue with token aquisition 
 			AuthenticationAgentContinuationHelper.SetAuthenticationAgentContinuationEventArgs(requestCode, resultCode, data);
 
 		}

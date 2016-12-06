@@ -23,7 +23,7 @@
 						 <TextCell Text="{Binding FullName}" Detail="{Binding DateDisplay}" >
 						 	<TextCell.ContextActions>
 				            	<MenuItem Clicked="OnMore" CommandParameter="{Binding .}" Text="More" />
-				            	<!--<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />-->
+				            	<MenuItem Clicked="OnDelete" CommandParameter="{Binding .}" Text="Delete" IsDestructive="True" />
 				        	</TextCell.ContextActions>
         				</TextCell>
 					</DataTemplate>

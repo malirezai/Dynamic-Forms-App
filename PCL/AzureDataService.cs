@@ -31,13 +31,17 @@ namespace PCL
 
 				try
 				{
-					await MobileService.LoginAsync(MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory, payload);
+					var user = await MobileService.LoginAsync(MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory, payload);
+
 				}
 				catch (Exception e)
 				{
 					
 				}
 			}
+
+
+
 
 			var path = "syncstore.db";
 			path = Path.Combine(MobileServiceClient.DefaultDatabasePath, path);
@@ -75,6 +79,7 @@ namespace PCL
 				FormData = data
 			};
 
+			//insert into our local table
 			await formTable.InsertAsync(form);
 
 			//Synchronize form
@@ -85,8 +90,10 @@ namespace PCL
 
 		public async Task SyncForm()
 		{
-			
+			// Pulls all items that match the associated query from the remote table
 			await formTable.PullAsync("allForms", formTable.CreateQuery());
+
+			//replays all pending local operations against the remote table
 			await MobileService.SyncContext.PushAsync();
 
 		}

@@ -126,13 +126,18 @@ namespace PCL
 							AutomationId = ((FormTextField)el).PlaceHolderText
 						};
 
+						var normalEditor = new Editor
+						{
+							HorizontalOptions = LayoutOptions.FillAndExpand
+						};
+
 						editor.TextChanged += (sender, e) =>
 						{
 							((FormTextField)el).Text = e.NewTextValue;
 						};
 
 						mainLayout.Children.Add(editor);
-
+						mainLayout.Children.Add(normalEditor);
 						break;
 						
 					case "Picker":
