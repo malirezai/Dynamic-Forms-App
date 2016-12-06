@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using Xamarin.Forms;
 using System.Threading.Tasks;
+using Microsoft.Azure.Mobile;
+using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.Azure.Mobile.Crashes;
 
 namespace PCL
 {
@@ -20,10 +23,9 @@ namespace PCL
 			App.submittedForms = new List<FormTable5>();
 
 			// The root page of your application
-
+			MobileCenter.Start(typeof(Analytics), typeof(Crashes));
 
 			MainPage = new NavigationPage(new LoginPage());
-
 
 		}
 

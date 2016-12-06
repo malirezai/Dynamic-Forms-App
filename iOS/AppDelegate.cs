@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Microsoft.Azure.Mobile;
 using UIKit;
 
 namespace PCL.iOS
@@ -14,6 +15,8 @@ namespace PCL.iOS
 		{
 			global::Xamarin.Forms.Forms.Init();
 			Microsoft.WindowsAzure.MobileServices.CurrentPlatform.Init();
+
+			MobileCenter.Configure("68befc9c-64bd-4748-a4a3-47e56f15673f");
 
 			LoadApplication(new App());
 
