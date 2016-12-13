@@ -16,5 +16,5 @@ namespace PCL
 			authExpiry = new DateTimeOffset();
 
 		}
-	}
+	} 
 }
